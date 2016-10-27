@@ -20,4 +20,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  base_title: "Framgia Movie Sample App"
+  layouts:
+    header:
+      home: "Home"
+      login: "Login"
+      movie_app: "Movie App"
+    footer:
+      about: "About"
+      contact: "Contact"
+      copyright: "Copyright © Your Website 2016"
+  pages:
+    home:
+      title: "Home"
+      content: "Home page"
+    help:
+      title: "Help"
+      content: "Help page"
+    about:
+      title: "About"
+      content: "About page"
+    contact:
+      title: "Contact"
+      content: "Contact page"
