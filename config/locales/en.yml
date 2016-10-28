@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  logged_in_as: "Logged in as"
   base_title: "Framgia Movie Sample App"
   layouts:
     header:
