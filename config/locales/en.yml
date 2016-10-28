@@ -24,8 +24,11 @@ en:
   layouts:
     header:
       home: "Home"
-      login: "Login"
+      login: "Sign in"
       movie_app: "Movie App"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Sign out"
     footer:
       about: "About"
       contact: "Contact"
