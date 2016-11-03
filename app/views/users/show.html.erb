@@ -1,0 +1,13 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <aside class="col-md-5">
+    <section class="user_info">
+      <p><%= t".name" %></p>
+      <%= @user.name %>
+
+      <p><%= t".email" %></p>
+      <%= @user.email %>
+    </section>
+  </aside>
+</div>
+

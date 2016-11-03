@@ -1,0 +1,34 @@
+<%= form_for @movie, html: {multipart: true} do |f| %>
+  <%= render "shared/error_messages",object: @movie %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :film_length %>
+    <%= f.text_field :film_length, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :director %>
+    <%= f.text_field :director, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
+
+  <%= f.submit (t ".add"), class: "btn btn-primary" %>
+  <%= link_to (t ".cancel"), movies_path, class: "btn btn-default" %>
+<% end %>
