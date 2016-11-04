@@ -1,0 +1,14 @@
+<div class="row">
+  <% @movies.each do |movie| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag movie.image.url(:medium), class: "image"), movie %>
+      </div>
+    </div>
+  <% end %>
+  <div class="row wrap-paging">
+    <div class="col-sm-12 text-center">
+      <%= paginate @movies, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>

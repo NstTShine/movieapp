@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  movie_created: "add the movie susseccfully"
+  movie_create_fail: "Create failed"
   logged_in_as: "Logged in as"
   base_title: "Framgia Movie Sample App"
   layouts:
@@ -47,3 +49,14 @@ en:
     contact:
       title: "Contact"
       content: "Contact page"
+  movies:
+    form:
+      add: "Add"
+      cancel: "Cancel"
+    new:
+      title: "Add Movie"
+      add_new_movie: "New Movie"
+  users:
+    show:
+      name: "Name"
+      email: "email"
