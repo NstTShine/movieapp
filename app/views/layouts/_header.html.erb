@@ -1,12 +1,39 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+  <div class="main-menu">
     <%= link_to (t ".movie_app"), "#", id: "logo" %>
     <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to "",   "#", class: "glyphicon glyphicon-home" %></li>
+        <li>
+          <a href="#" title="<%= t ".types" %>">
+            <span><%= t ".types" %></span>
+          </a>
+          <ul class="sub-menu span-2 absolute">
+            <% @categories.each do |category| %>
+              <li class="sub-menu-item">
+                <%= link_to category.name, "#", title: category.name %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <a href="#" title="<%= t ".country" %>">
+            <span><%= t ".country" %></span>
+          </a>
+          <ul class="sub-menu span-3 absolute">
+            <% @countries.each do |country| %>
+              <li class="sub-menu-item">
+                <%= link_to country.name, "#", title: country.name %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to (t ".home"),   "#" %></li>
-        <li><%= link_to (t ".help"),   "/help" %></li>
+        <li><%= link_to (t ".sign_up"),   new_user_registration_path,
+          class: "glyphicon glyphicon-plus-sign" %></li>
         <% if user_signed_in? %>
-          <li class="dropdown">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= current_user.name %> <b class="caret"></b>
           </a>
@@ -14,11 +41,13 @@
             <li><%= link_to t(".profile"), current_user %></li>
             <li><%= link_to t(".settings"), edit_user_registration_path %></li>
             <li class="divider"></li>
-            <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to t(".logout"), destroy_user_session_path,
+              method: :delete %></li>
           </ul>
         </li>
         <% else %>
-          <li><%= link_to (t ".login"),  new_user_session_path %></li>
+          <li><%= link_to (t ".login"),  new_user_session_path,
+            class: "glyphicon glyphicon-log-in" %></li>
         <% end %>
       </ul>
     </nav>

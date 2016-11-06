@@ -26,6 +26,18 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :category %>
+    <%= f.select :category_id, @categories.collect{|p| [p.name, p.id]},
+      {include_blank: false}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :country %>
+    <%= f.select :country_id, @countries.collect{|c| [c.name, c.id]},
+      {include_blank: false}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.file_field :image %>
   </div>
 

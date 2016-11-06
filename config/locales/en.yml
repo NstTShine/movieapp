@@ -32,9 +32,13 @@ en:
       profile: "Profile"
       settings: "Settings"
       logout: "Sign out"
+      sign_up: "Sign up"
+      types: "Types"
+      country: "Country"
     footer:
       about: "About"
       contact: "Contact"
+      help: "Help"
       copyright: "Copyright © Your Website 2016"
   pages:
     home:
