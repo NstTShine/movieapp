@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20161103073543) do
     t.string   "film_length"
     t.string   "director"
     t.text     "description"
-    t.string   "image"
     t.integer  "category_id"
     t.integer  "country_id"
     t.float    "rating"

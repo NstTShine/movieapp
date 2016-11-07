@@ -12,5 +12,6 @@ class Movie < ApplicationRecord
   has_attached_file :image, styles: {medium: "400x600#"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  ATTRIBUTES_PARAMS = [:name, :film_length, :image, :description, :rating]
+  ATTRIBUTES_PARAMS = [:name, :film_length, :image, :description, :rating,
+    :category_id, :country_id]
 end

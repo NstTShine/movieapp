@@ -96,3 +96,158 @@ footer {
     }
   }
 }
+
+/* for main menu */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, font, img, strong, b, u, i,
+center, dl, dt, dd, ol, ul, li, form, lable, legend, caption, tbody, tfoot, thead, .resset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a, a:focus, a:hover {
+  text-decoration: none;
+}
+
+.main-menu {
+  padding: 0;
+  margin: 0 auto;
+  width: 980px;
+}
+
+.main-menu {
+  ul {
+    >li {
+      &:first-child {
+        border: none;
+      }
+    }
+  }
+}
+
+.main-menu {
+  ul {
+    >li {
+      .menu-home {
+        a {
+          padding: 0 4px 0 10px;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+.main-menu {
+  ul {
+    >li {
+      float: left;
+      border-left: 1px solid #466079;
+      position: relative;
+      &:hover {
+        .sub-menu {
+          display: block;
+        }
+      }
+      >a {
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 50px;
+        padding: 0px 14px;
+        &:hover {
+          color: #dcdcdc;
+        }
+        >i {
+          .fa {
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fa {
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-menu {
+  .sub-menu.span-2 {
+    width: 650px;
+    >li {
+      float: left;
+      width: 25%;
+    }
+  }
+  .sub-menu.span-3 {
+    width: 450px;
+    >li {
+      float: left;
+      width: 25%;
+    }
+  }
+}
+
+.main-menu {
+  .sub-menu {
+    top: 100%;
+    left: 0;
+    width: 166px;
+    background-color: rgba(52,73,94,0.9);
+    z-index: 101;
+    display: none;
+  }
+}
+
+.main-menu {
+  ul {
+    .sub-menu {
+      >li {
+        a {
+          font-size: 13px;
+          font-weight: normal;
+          font-family: Arial;
+          text-transform: none;
+          line-height: 20px;
+          padding: 7px;
+          white-space: nowrap;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.main-menu {
+  ul {
+    .sub-menu {
+      >li {
+        border-left: none;
+        float: none;
+      }
+    }
+  }
+}
+
+.fix-body {
+  margin-top: 100px;
+}
