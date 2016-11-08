@@ -3,7 +3,7 @@
     <%= link_to (t ".movie_app"), "#", id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "",   "#", class: "glyphicon glyphicon-home" %></li>
+        <li><%= link_to "",   movies_path, class: "glyphicon glyphicon-home" %></li>
         <li>
           <a href="#" title="<%= t ".types" %>">
             <span><%= t ".types" %></span>
@@ -11,7 +11,8 @@
           <ul class="sub-menu span-2 absolute">
             <% @categories.each do |category| %>
               <li class="sub-menu-item">
-                <%= link_to category.name, "#", title: category.name %>
+                <%= link_to category.name, searchs_path(@movie,
+                  category_id: category.id), title: category.name %>
               </li>
             <% end %>
           </ul>
@@ -22,13 +23,22 @@
           </a>
           <ul class="sub-menu span-3 absolute">
             <% @countries.each do |country| %>
-              <li class="sub-menu-item">
-                <%= link_to country.name, "#", title: country.name %>
+              <li class="sub-menu-item">=
+                <%= link_to country.name, searchs_path(@movie,
+                  country_id: country.id), title: country.name %>
               </li>
             <% end %>
           </ul>
         </li>
       </ul>
+      <%= form_tag searchs_path, method: :get,
+        class: "navbar-form navbar-left", role: "search" do %>
+        <p>
+          <%= text_field_tag :search, params[:search], class: "form-control",
+            placeholder: t(".placeholder_text") %>
+          <%= submit_tag (t ".search"), class: "btn btn-default" %>
+        </p>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to (t ".sign_up"),   new_user_registration_path,
           class: "glyphicon glyphicon-plus-sign" %></li>

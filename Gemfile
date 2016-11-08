@@ -18,6 +18,7 @@ gem "devise", "~> 4.2"
 gem "devise-bootstrap-views"
 gem "omniauth-facebook"
 gem "paperclip", "~> 5.1"
+gem "searchkick"
 
 group :development, :test do
   gem "byebug", platform: :mri

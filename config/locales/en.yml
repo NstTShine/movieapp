@@ -35,6 +35,8 @@ en:
       sign_up: "Sign up"
       types: "Types"
       country: "Country"
+      search: "Search"
+      placeholder_text: "Enter movie or actor's name..."
     footer:
       about: "About"
       contact: "Contact"
