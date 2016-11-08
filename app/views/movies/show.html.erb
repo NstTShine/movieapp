@@ -1,0 +1,53 @@
+<div>
+  <video width="1020", autoplay, controls>
+    <source src="<%= @movie.link %>" type="video/mp4">
+  </video>
+</div>
+<div class="share-like-bar">
+  <%= t ".tempolary_content" %>
+</div>
+<div class="tn-main-l">
+  <div class="block-movie">
+   <div class="header-block-title"><%= t ".film_info" %></div>
+   <div class="block-child">
+      <div class="filminfo-fields">
+        <ul>
+          <li><%= t ".movie_name" %><%= @movie.name %></li>
+          <li><%= t ".type" %><%= @movie.category.name %></li>
+          <li><%= t ".country" %><%= @movie.country.name %></li>
+          <li><%= t ".duration" %><%= @movie.film_length %></li>
+          <li><%= t ".director" %><%= @movie.director %></li>
+          <li><%= t ".actors" %><%= @movie.actors %></li>
+        </ul>
+      </div>
+      <div>
+        <div class="rate-star">
+          <%= unless @movie.average("overview").nil?
+            (@movie.average("overview").avg.round Settings.rating.per_avg)
+          end %>
+        </div>
+        <div class="rate-vote">
+          <div class="your-vote"><%= t ".your_rate"%></div>
+          <div>
+            <%= rating_for @movie, "overview", star: 10, disable_after_rate: false,
+              enable_half: true %>
+          </div>
+          <div class="rate-people">
+            <%= t ".rating" %>
+            <%= unless @movie.average("overview").nil?
+            (@movie.average("overview").avg.round Settings.rating.per_avg)
+            end %>
+            <%= t ".from"%>
+            <%= @movie.rates("overview").count %>
+            <%= t ".member"%>
+          </div>
+        </div>
+      </div>
+      <div>
+        <%= @movie.description %>
+        <a></a>
+        <div class="line-bottom"></div>
+      </div>
+   </div>
+  </div>
+</div>

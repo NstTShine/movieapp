@@ -7,7 +7,6 @@ class CreateMovies < ActiveRecord::Migration[5.0]
       t.text :description
       t.integer :category_id
       t.integer :country_id
-      t.float :rating
 
       t.timestamps
     end

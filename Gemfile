@@ -19,6 +19,7 @@ gem "devise-bootstrap-views"
 gem "omniauth-facebook"
 gem "paperclip", "~> 5.1"
 gem "searchkick"
+gem "ratyrate"
 
 group :development, :test do
   gem "byebug", platform: :mri

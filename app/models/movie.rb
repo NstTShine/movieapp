@@ -1,10 +1,12 @@
 class Movie < ApplicationRecord
-  searchkick word: [:name]
+  searchkick word: [:name, :actors]
   paginates_per Settings.movie.per_page
   belongs_to :category
   belongs_to :country
   has_many :comments
   has_many :likes
+  enum kind: [:single_movie, :series_movie]
+  ratyrate_rateable "overview"
 
   validates :name, presence: true, uniqueness:true, length: {maximum: 50}
   validates :category_id, presence: true
@@ -14,7 +16,7 @@ class Movie < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   ATTRIBUTES_PARAMS = [:name, :film_length, :image, :description, :rating,
-    :category_id, :country_id]
+    :director, :category_id, :country_id, :link, :actors, :kind]
 
   scope :in_category, -> category_id do
     where category_id: category_id if category_id.present?

@@ -62,6 +62,19 @@ en:
     new:
       title: "Add Movie"
       add_new_movie: "New Movie"
+    show:
+      tempolary_content: "Some thing write here !"
+      film_info: "Information"
+      movie_name: "Movie name: "
+      type: "Type: "
+      country: "Country: "
+      duration: "The duration: "
+      director: "Director: "
+      actors: "Actors: "
+      your_rate: "Your rate:"
+      rating: "Rate "
+      from: " from "
+      member: " member"
   users:
     show:
       name: "Name"

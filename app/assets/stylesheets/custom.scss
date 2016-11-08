@@ -251,3 +251,93 @@ a, a:focus, a:hover {
 .fix-body {
   margin-top: 100px;
 }
+
+.share-like-bar {
+  margin-top: 10px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  width: 1020px;
+}
+
+.tn-main-l {
+  border-radius: 5px;
+  float: left;
+  width: 300px;
+  padding-top: 1px;
+  position: relative;
+  top: 0px;
+  bottom: auto;
+  left: auto;
+  .block-movie {
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    .header-block-title {
+      margin: 0 0 10px 0;
+      text-align: center;
+      border-bottom: transparent 3px solid;
+      background: #f2f2f2;
+      padding: 5px 15px;
+      font-size: 17px;
+      color: #666;
+      text-transform: uppercase;
+      border-bottom-color: #67c920;
+    }
+    .block-child {
+      padding: 5px 5px;
+      margin-top: 0;
+      font-family: 'Open Sans',sans-serif;
+      font-size: 14px;
+      .filminfo-fields {
+        margin: 0 0 10px;
+        padding: 0px 10px 0px 20px;
+        ul {
+          width: 100%;
+          display: block;
+          list-style-type: disc;
+          -webkit-margin-before: 1em;
+          -webkit-margin-after: 1em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+          -webkit-padding-start: 40px;
+        }
+      }
+      .line-bottom {
+        clear: both;
+        border-bottom: 1px solid #ccc;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+.rate-star {
+  display: inline-block;
+  background: url(big-star.png);
+  background-size: cover;
+  height: 40px;
+  width: 46px;
+  line-height: 43px;
+  text-align: center;
+  top: -8px;
+  font-weight: bold;
+  position: relative;
+}
+.rate-vote {
+  width: 80%;
+  display: inline-block;
+  padding-left: 10px;
+  .rate-people {
+    font-size: 11px;
+  }
+  .your-vote {
+    display: inline-block;
+    font-size: 11px;
+  }
+}
+
+.test-tempolary {
+  background-color: #1d1f42;
+}

@@ -1,2 +1,7 @@
 movie:
   per_page: 12
+kinds:
+  - ["Single Movie", "single_movie"]
+  - ["Series Movie", "series_movie"]
+rating:
+  per_avg: 1

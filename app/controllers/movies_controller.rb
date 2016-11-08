@@ -1,4 +1,7 @@
 class MoviesController < ApplicationController
+  before_action :load_movie, only: :show
+  def show
+  end
 
   def index
     @movies = Movie.page params[:page]

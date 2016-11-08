@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
   before_action :load_categories
   before_action :load_countries
 
+  def load_movie
+    @movie = Movie.find_by id: params[:id]
+    if @movie.nil?
+      render file: "public/404.html", status: :not_found, layout: true
+    end
+  end
+
   private
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up do |user_params|
