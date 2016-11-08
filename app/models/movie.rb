@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  searchkick word: [:name]
   paginates_per Settings.movie.per_page
   belongs_to :category
   belongs_to :country
@@ -14,4 +15,11 @@ class Movie < ApplicationRecord
 
   ATTRIBUTES_PARAMS = [:name, :film_length, :image, :description, :rating,
     :category_id, :country_id]
+
+  scope :in_category, -> category_id do
+    where category_id: category_id if category_id.present?
+  end
+  scope :in_country, -> country_id do
+    where country_id: country_id if country_id.present?
+  end
 end
