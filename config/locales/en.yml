@@ -24,6 +24,8 @@ en:
   movie_create_fail: "Create failed"
   logged_in_as: "Logged in as"
   base_title: "Framgia Movie Sample App"
+  rate_require_login: "You have login to rate"
+  sever_error: "Server error, rating was failed"
   layouts:
     header:
       home: "Home"
@@ -62,7 +64,22 @@ en:
     new:
       title: "Add Movie"
       add_new_movie: "New Movie"
+    show:
+      tempolary_content: "Some thing write here !"
+      film_info: "Information"
+      movie_name: "Movie name: "
+      type: "Type: "
+      country: "Country: "
+      duration: "The duration: "
+      director: "Director: "
+      actors: "Actors: "
+      your_rate: "Your rate:"
+      rating: "Rate "
+      from: " from "
+      member: " member"
   users:
     show:
       name: "Name"
       email: "email"
+  js:
+    url_update_rating: "/rating_movies"

@@ -1,0 +1,57 @@
+<div>
+  <video width="1020", autoplay, controls>
+    <source src="<%= @movie_support.movie.link %>" type="video/mp4">
+  </video>
+</div>
+<div class="share-like-bar">
+  <%= t ".tempolary_content" %>
+</div>
+<div class="tn-main-l">
+  <div class="block-movie">
+   <div class="header-block-title"><%= t ".film_info" %></div>
+   <div class="block-child">
+      <div class="filminfo-fields">
+        <ul>
+          <li><%= t ".movie_name" %><%= @movie_support.movie.name %></li>
+          <li><%= t ".type" %><%= @movie_support.movie.category_name %></li>
+          <li><%= t ".country" %><%= @movie_support.movie.country_name %></li>
+          <li><%= t ".duration" %><%= @movie_support.movie.film_length %></li>
+          <li><%= t ".director" %><%= @movie_support.movie.director %></li>
+          <li><%= t ".actors" %><%= @movie_support.movie.actors %></li>
+        </ul>
+      </div>
+      <div>
+        <div class="rate-star">
+          <span id="rate-star"><%= @movie_support.movie.rating %></span>
+        </div>
+        <div class="rate-vote">
+          <div class="your-vote"><%= t ".your_rate"%></div>
+          <div class="rate-movie">
+            <input type="hidden" value="<%= @movie_support.rating_movie.id if
+              @movie_support.rating_movie.present? %>" id="your_rate_id">
+            <input type="hidden" value="<%= @movie_support.rating_movie.rating if
+              @movie_support.rating_movie.present? %>" id="your_rate">
+            <input type="hidden" value="<%= @movie_support.movie.id %>"
+              id="movie_id_field">
+            <% 5.times do |n| %>
+              <%= image_tag(Settings.star_off, title: Settings.rating_rank[n],
+                alt: "#{n+1}", class: "star-movie") %>
+            <% end %>
+          </div>
+          <div class="rate-people">
+            <%= t ".rating" %>
+            <span id="rate_text"><%= @movie_support.movie_rating %></span>
+            <%= t ".from" %>
+            <span id="total_rater"><%= @movie_support.total_rater %></span>
+            <%= t ".member" %>
+          </div>
+        </div>
+      </div>
+      <div>
+        <%= @movie_support.movie_description %>
+        <a></a>
+        <div class="line-bottom"></div>
+      </div>
+   </div>
+  </div>
+</div>
