@@ -42,6 +42,9 @@ en:
     data_constraints: "Can not delete because data is using now"
     delete_success: "Delete successfully"
     delete_failed: "Delete failed"
+  user:
+    delete_success: " has been deleted"
+    delete_fail: " can't be delete"
   layouts:
     header:
       home: "Home"
@@ -140,5 +143,21 @@ en:
       edit:
         title: "Edit Country"
         btn_update: "Update"
+    users:
+      index:
+        alluser: "All Users"
+        search_title: "Search by keyword"
+        confirm_delete: "Are you sure ????"
+        btn_search: "Search"
+        index: "No."
+        name: "Name"
+        email: "Email"
+        created_date: "Created date"
+        role: "Role"
+        link_delete: "Delete"
   js:
     url_update_rating: "/rating_movies"
+  time:
+    formats:
+      short_datetime: "%B %d, %Y"
+      long_datetime:  "%B %d, %Y, at %r"

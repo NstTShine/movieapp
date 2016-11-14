@@ -70,6 +70,9 @@ p {
     text-decoration: none;
   }
 }
+.right-menu {
+  margin-right: 30px;
+}
 
 /* footer */
 
@@ -356,4 +359,12 @@ a, a:focus, a:hover {
 }
 .text-c {
   text-align: center;
+}
+/* for admin manage users page */
+.ls-users {
+  border: 1px solid #e7e7e7;
+  background-color: white;
+  .title_table {
+    background-color: #B8E6FF;
+  }
 }

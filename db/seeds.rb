@@ -25,3 +25,10 @@ Country.create!(name: "Nhật Bản")
 Country.create!(name: "Ấn Độ")
 Country.create!(name: "Philipines")
 Country.create!(name: "Các Nước Khác")
+
+User.create!(name: "TShine", email: "hihihohohehe91@gmail.com",
+  password: "111111", role: 0)
+20.times do |n|
+  User.create!(name: "Example##{n + 1}", email: "hihihohohehe##{n + 1}@abc.org",
+    password: "111111")
+end

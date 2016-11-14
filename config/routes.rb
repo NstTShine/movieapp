@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     root "admin/movies#index"
     resources :categories
     resources :countries
+    resources :users
   end
 end
