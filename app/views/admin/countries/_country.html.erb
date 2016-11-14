@@ -1,0 +1,22 @@
+<tr class=" <%= country_counter.even? ? "success": "danger" %>">
+  <td class="text-c">
+    <% params[:page] ||= "1" %>
+    <%= index_for params[:page], country_counter, Settings.country.per_page %>
+  </td>
+  <td class="text-c">
+    <%= country.name %>
+  </td>
+  <td class="text-c">
+    <%= link_to edit_admin_country_path(country),
+      class: "btn btn-default btn-xs" do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <%= t ".link_edit" %>
+    <% end %>
+    <%= link_to admin_country_path(country), method: :delete,
+      class: "btn btn-danger btn-xs",
+      data: {confirm: (t ".delete_confirm")} do %>
+        <span class="glyphicon glyphicon-remove"></span>
+        <%= t ".link_delete" %>
+    <% end %>
+  </td>
+</tr>

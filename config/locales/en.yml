@@ -34,6 +34,14 @@ en:
     data_constraints: "Can not delete because data is using now"
     delete_success: "Delete successfully"
     delete_failed: "Delete failed"
+  country:
+    create_success: "Create successfully"
+    create_failed: "Create failed"
+    update_success: "Update successfully"
+    update_failed: "Update failed"
+    data_constraints: "Can not delete because data is using now"
+    delete_success: "Delete successfully"
+    delete_failed: "Delete failed"
   layouts:
     header:
       home: "Home"
@@ -51,7 +59,7 @@ en:
       users: "Users"
       movies: "Movies"
       categories: "Categories"
-      country: "Country"
+      countries: "Countries"
     footer:
       about: "About"
       contact: "Contact"
@@ -112,6 +120,25 @@ en:
         link_edit: "Edit"
       edit:
         title: "Edit Category"
+        btn_update: "Update"
+    countries:
+      new:
+        title: "Add Country"
+        btn_create: "Create"
+      index:
+        title: "All Countries"
+        btn_add_new: "New Country"
+        country_name: "Country Name"
+        options: "Options"
+        order: "No."
+      form:
+        cancel: "Cancel"
+      country:
+        delete_confirm: "Are you sure ???"
+        link_delete: "Delete"
+        link_edit: "Edit"
+      edit:
+        title: "Edit Country"
         btn_update: "Update"
   js:
     url_update_rating: "/rating_movies"

@@ -1,5 +1,7 @@
 movie:
   per_page: 12
+country:
+  per_page: 10
 kinds:
   - ["Single Movie", "single_movie"]
   - ["Series Movie", "series_movie"]
