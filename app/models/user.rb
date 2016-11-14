@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :likes
 
   validates :name, presence: true, length: {maximum: 50}
+  enum role: [:admin, :member, :guest]
 
   class << self
     def from_omniauth auth

@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :load_categories
   before_action :load_countries
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
+  end
+
   private
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up do |user_params|
