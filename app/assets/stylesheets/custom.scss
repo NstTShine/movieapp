@@ -252,6 +252,7 @@ a, a:focus, a:hover {
   margin-top: 100px;
 }
 
+/* for show movie content */
 .share-like-bar {
   margin-top: 10px;
   height: 45px;
@@ -340,5 +341,19 @@ a, a:focus, a:hover {
 }
 
 .test-tempolary {
-  background-color: #1d1f42;
+  background-image: url("default-bg.jpg");
+}
+/* for admin manage categories page */
+.fix-h1 {
+  font-size: 30px;
+  color: #0fc720;
+}
+.mg-boot {
+  margin-bottom: 20px;
+}
+.mg-top {
+  margin-top: 20px;
+}
+.text-c {
+  text-align: center;
 }

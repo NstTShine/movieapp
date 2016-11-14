@@ -1,0 +1,15 @@
+<% provide title: (t ".title") %>
+<%= link_to (t ".btn_add_new"), new_admin_category_path,
+  {class: "btn btn-primary mg-boot"} %>
+<% if @categories.any? %>
+  <table class="table table-hover">
+    <tr>
+      <th class="text-c"><%= t ".category_name" %></th>
+      <th class="text-c"><%= t ".options" %></th>
+    </tr>
+    <%= render "category" %>
+  </table>
+  <div class="text-c">
+    <%= paginate @categories %>
+  </div>
+<% end %>
