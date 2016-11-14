@@ -39,6 +39,11 @@ en:
       country: "Country"
       search: "Search"
       placeholder_text: "Enter movie or actor's name..."
+      manage: " Manage"
+      users: "Users"
+      movies: "Movies"
+      categories: "Categories"
+      country: "Country"
     footer:
       about: "About"
       contact: "Contact"

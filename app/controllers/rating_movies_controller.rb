@@ -1,5 +1,6 @@
 class RatingMoviesController < ApplicationController
   before_action :check_login_for_rate, only: :create
+  load_and_authorize_resource
 
   def create
     @rating_movie = RatingMovie.new rating_movie_params

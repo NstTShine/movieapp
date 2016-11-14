@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.create!(name: "Cổ Trang - Thần Thoại")
+Category.create!(name: "Võ Thuật - Kiếm Hiệp")
+Category.create!(name: "Phiêu Lưu -  Hành Động")
+Category.create!(name: "Tâm Lý - Tình Cảm")
+Category.create!(name: "Phim Hoạt Hình")
+Category.create!(name: "Khoa Học - Viễn Tưởng")
+Category.create!(name: "Hình Sự -  Chiến Tranh")
+Category.create!(name: "Tài Liệu - Khám Phám")
+Category.create!(name: "Văn Hóa - Tâm Linh")
+Category.create!(name: "Hài Hước")
+Category.create!(name: "Thể Thao - Âm Nhạc")
+Category.create!(name: "Kinh Dị -  Ma")
+Category.create!(name: "Gia Đình -  Học Đường")
+Category.create!(name: "Phim Thuyết Minh")
+Category.create!(name: "Phim Lồng Tiếng")
+
+Country.create!(name: "Việt Nam")
+Country.create!(name: "Trung Quốc")
+Country.create!(name: "Hàn Quốc")
+Country.create!(name: "Thái Lan")
+Country.create!(name: "Hồng Kong")
+Country.create!(name: "Âu – Mỹ")
+Country.create!(name: "Đài Loan")
+Country.create!(name: "Nhật Bản")
+Country.create!(name: "Ấn Độ")
+Country.create!(name: "Philipines")
+Country.create!(name: "Các Nước Khác")
