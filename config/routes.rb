@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :movies, :rating_movies
   resources :searchs, only: :index
+
+  namespace :admin do
+    root "admin/moives#index"
+    resources :categories
+  end
 end

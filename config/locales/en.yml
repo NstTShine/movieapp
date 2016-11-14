@@ -26,6 +26,14 @@ en:
   base_title: "Framgia Movie Sample App"
   rate_require_login: "You have login to rate"
   sever_error: "Server error, rating was failed"
+  category:
+    create_success: "Create successfully"
+    create_failed: "Create failed"
+    update_success: "Update successfully"
+    update_failed: "Update failed"
+    data_constraints: "Can not delete because data is using now"
+    delete_success: "Delete successfully"
+    delete_failed: "Delete failed"
   layouts:
     header:
       home: "Home"
@@ -86,5 +94,24 @@ en:
     show:
       name: "Name"
       email: "email"
+  admin:
+    categories:
+      new:
+        title: "Add Category"
+        btn_create: "Create"
+      index:
+        title: "All Category"
+        btn_add_new: "New Category"
+        category_name: "Category Name"
+        options: "Options"
+      form:
+        cancel: "Cancel"
+      category:
+        delete_confirm: "Are you sure ???"
+        link_delete: "Delete"
+        link_edit: "Edit"
+      edit:
+        title: "Edit Category"
+        btn_update: "Update"
   js:
     url_update_rating: "/rating_movies"
