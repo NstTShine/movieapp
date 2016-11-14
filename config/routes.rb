@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {omniauth_callbacks: "callbacks"}
   resources :users, only: :show
-  resources :movies
-  resources :searchs
+  resources :movies, :rating_movies
+  resources :searchs, only: :index
 end

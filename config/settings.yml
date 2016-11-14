@@ -1,2 +1,10 @@
 movie:
   per_page: 12
+kinds:
+  - ["Single Movie", "single_movie"]
+  - ["Series Movie", "series_movie"]
+rating:
+  per_avg: 1
+star_on: "/assets/star-on.png"
+star_off: "/assets/star-off.png"
+rating_rank: ["bad", "poor", "regular", "good", "gorgeous"]
