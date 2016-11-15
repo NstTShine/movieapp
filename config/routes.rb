@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :searchs, only: :index
 
   namespace :admin do
-    root "admin/moives#index"
+    root "admin/movies#index"
     resources :categories
+    resources :countries
   end
 end
