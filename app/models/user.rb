@@ -5,9 +5,12 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
   has_many :likes
+  searchkick
 
   validates :name, presence: true, length: {maximum: 50}
   enum role: [:admin, :member, :guest]
+
+  scope :latest, -> {order created_at: :desc}
 
   class << self
     def from_omniauth auth
@@ -20,5 +23,9 @@ class User < ApplicationRecord
         user.save
       end
     end
+  end
+
+  def is_user? user
+    self.id == user.id
   end
 end
