@@ -27,4 +27,6 @@ class Movie < ApplicationRecord
   scope :in_country, -> country_id do
     where country_id: country_id if country_id.present?
   end
+
+  scope :newest, -> {order updated_at: :desc, created_at: :desc}
 end

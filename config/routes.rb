@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :categories
     resources :countries
     resources :users
+    resources :movies
   end
 end
