@@ -20,11 +20,30 @@ class Admin::MoviesController < ApplicationController
   def create
     @movie = Movie.new movie_params
     if @movie.save
-      flash[:success] = t "movie_created"
+      flash[:success] = t "movie.create_success"
       redirect_to admin_movies_path
     else
       render :new
     end
+  end
+
+  def update
+    if @movie.update_attributes movie_params
+      flash[:success] = t "movie.update_success"
+      redirect_to admin_movies_path
+    else
+      flash[:danger] = t "movie.update_fail"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @movie.destroy
+      flash[:success] = t "movie.delete_success"
+    else
+      flash[:danger] = t "movie.delete_fail"
+    end
+    redirect_to :back
   end
 
   private

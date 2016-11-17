@@ -45,6 +45,12 @@ en:
   user:
     delete_success: " has been deleted"
     delete_fail: " can't be delete"
+  movie:
+    create_success: "Movie has been created"
+    update_success: "Update successfully"
+    update_fail: "Update failed"
+    delete_success: "Delete successfully"
+    delete_fail: "Delete failed"
   layouts:
     header:
       home: "Home"
@@ -109,6 +115,7 @@ en:
         btn_add_new: "New Category"
         category_name: "Category Name"
         options: "Options"
+        order: ".No"
       form:
         cancel: "Cancel"
       category:
@@ -151,11 +158,11 @@ en:
         link_delete: "Delete"
     movies:
       form:
-        add: "Add"
         cancel: "Cancel"
       new:
         title: "Add Movie"
         add_new_movie: "New Movie"
+        add: "Add"
       index:
         all_movies: "All Movies"
         btn_add_new: "New Movie"
@@ -170,6 +177,24 @@ en:
         btn_detail: "Detail"
         all_categories: "All Categories"
         all_countries: "All Countries"
+        confirm_delete: "Are you sure for delete this movie???"
+      edit:
+        title: "Update Movie"
+        update: "Update"
+        update_movie: "Update Movie"
+      show:
+        show_detail: "Show Detail Movie"
+        movie_detail: "Movie Details"
+        back: "Back"
+        view_links_chapters: "View links chapters"
+        name: "Name"
+        length: "Length"
+        director: "Director"
+        actors: "Actors"
+        category: "Category"
+        country: "Country"
+        kind: "Kind"
+        description: "Description"
   js:
     url_update_rating: "/rating_movies"
   time:
