@@ -82,12 +82,6 @@ en:
       title: "Contact"
       content: "Contact page"
   movies:
-    form:
-      add: "Add"
-      cancel: "Cancel"
-    new:
-      title: "Add Movie"
-      add_new_movie: "New Movie"
     show:
       tempolary_content: "Some thing write here !"
       film_info: "Information"
@@ -155,9 +149,30 @@ en:
         created_date: "Created date"
         role: "Role"
         link_delete: "Delete"
+    movies:
+      form:
+        add: "Add"
+        cancel: "Cancel"
+      new:
+        title: "Add Movie"
+        add_new_movie: "New Movie"
+      index:
+        all_movies: "All Movies"
+        btn_add_new: "New Movie"
+        search_title: "Enter keyword"
+        btn_search: "Search"
+        index: "NO."
+        created_date: "Created"
+        updated_date: "Updated"
+        options: "Options"
+        movie_edit: "Edit this movie"
+        movie_delete: "Delete this movie"
+        btn_detail: "Detail"
+        all_categories: "All Categories"
+        all_countries: "All Countries"
   js:
     url_update_rating: "/rating_movies"
   time:
     formats:
-      short_datetime: "%B %d, %Y"
-      long_datetime:  "%B %d, %Y, at %r"
+      short_datetime: "%m/%d/%Y"
+      long_datetime:  "%m/%d/%Y, %r"
