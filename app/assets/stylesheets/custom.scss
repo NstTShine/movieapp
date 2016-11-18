@@ -8,6 +8,9 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
+  background: url("default-bg.jpg") no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
   padding-top: 60px;
 }
 
@@ -78,7 +81,7 @@ p {
 
 footer {
   margin-top: 45px;
-  padding-top: 5px;
+  padding: 15px 20px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
   a {
@@ -110,7 +113,6 @@ center, dl, dt, dd, ol, ul, li, form, lable, legend, caption, tbody, tfoot, thea
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent;
 }
 
 ol, ul {
@@ -253,6 +255,7 @@ a, a:focus, a:hover {
 
 .fix-body {
   margin-top: 100px;
+  min-height: 470px;
 }
 
 /* for show movie content */
@@ -343,9 +346,6 @@ a, a:focus, a:hover {
   }
 }
 
-.test-tempolary {
-  background-image: url("default-bg.jpg");
-}
 /* for admin manage categories page */
 .fix-h1 {
   font-size: 30px;
@@ -358,7 +358,7 @@ a, a:focus, a:hover {
   margin-top: 20px;
 }
 .text-c {
-  text-align: center;
+  text-align: center!important;
 }
 /* for admin manage users page */
 .ls-users {
@@ -366,5 +366,13 @@ a, a:focus, a:hover {
   background-color: white;
   .title_table {
     background-color: #B8E6FF;
+  }
+}
+
+/* for admin show detail a movie */
+.movie-show-form {
+  margin: 30px auto;
+  td {
+    text-align: left;
   }
 }

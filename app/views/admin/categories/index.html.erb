@@ -4,10 +4,11 @@
 <% if @categories.any? %>
   <table class="table table-hover">
     <tr>
+      <th class="text-c"><%= t ".order" %></th>
       <th class="text-c"><%= t ".category_name" %></th>
       <th class="text-c"><%= t ".options" %></th>
     </tr>
-    <%= render "category" %>
+    <%= render @categories %>
   </table>
   <div class="text-c">
     <%= paginate @categories %>

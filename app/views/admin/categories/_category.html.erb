@@ -1,20 +1,22 @@
-<% @categories.each_with_index do |category, index| %>
-  <tr class=" <%= index.even? ? "success": "danger" %>">
-    <td class="text-c">
-      <%= category.name %>
-    </td>
-    <td class="text-c">
-      <%= link_to edit_admin_category_path(category),
-        class: "btn btn-default btn-xs" do %>
-          <span class="glyphicon glyphicon-edit"></span>
-          <%= t ".link_edit" %>
-      <% end %>
-      <%= link_to admin_category_path(category), method: :delete,
-        class: "btn btn-danger btn-xs",
-        data: {confirm: (t ".delete_confirm")} do %>
-        <span class="glyphicon glyphicon-remove"></span>
-          <%= t ".link_delete" %>
-      <% end %>
-    </td>
-  </tr>
-<% end %>
+<tr class=" <%= category_counter.even? ? "success": "danger" %>">
+  <td class="text-c">
+    <% params[:page] ||= "1" %>
+    <%= index_for params[:page], category_counter, Settings.category.per_page %>
+  </td>
+  <td class="text-c">
+    <%= category.name %>
+  </td>
+  <td class="text-c">
+    <%= link_to edit_admin_category_path(category),
+      class: "btn btn-default btn-xs" do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <%= t ".link_edit" %>
+    <% end %>
+    <%= link_to admin_category_path(category), method: :delete,
+      class: "btn btn-danger btn-xs",
+      data: {confirm: (t ".delete_confirm")} do %>
+      <span class="glyphicon glyphicon-remove"></span>
+        <%= t ".link_delete" %>
+    <% end %>
+  </td>
+</tr>
