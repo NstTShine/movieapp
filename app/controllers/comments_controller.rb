@@ -1,6 +1,12 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    @comments = Comment.find_by_movie(params[:movie_id])
+      .page(params[:page]).per Settings.comment.per_page
+    render partial: "/comments/comment", locals: {comment: @comment}
+  end
+
   def destroy
     unless @comment.destroy
       render plain: "false"

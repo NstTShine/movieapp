@@ -24,7 +24,7 @@ en:
   movie_create_fail: "Create failed"
   logged_in_as: "Logged in as"
   base_title: "Framgia Movie Sample App"
-  rate_require_login: "You have login to rate"
+  rate_require_login: "You have to login"
   sever_error: "Server error, rating was failed"
   category:
     create_success: "Create successfully"
@@ -54,12 +54,12 @@ en:
   layouts:
     header:
       home: "Home"
-      login: "Sign in"
+      login: " Login"
       movie_app: "Movie App"
       profile: "Profile"
       settings: "Settings"
-      logout: "Sign out"
-      sign_up: "Sign up"
+      logout: "Logout"
+      sign_up: " SignUp"
       types: "Types"
       country: "Country"
       search: "Search"
@@ -109,7 +109,7 @@ en:
       email: "email"
   comments:
     form:
-      placeholder_text: "What do you think obout this firm..."
+      placeholder_text: "What do you think about this firm..."
       POST: "POST"
       login_to_comment: "Login to comment"
   admin:

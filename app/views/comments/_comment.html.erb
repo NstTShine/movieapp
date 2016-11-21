@@ -1,4 +1,4 @@
-<div class="in-each-user">
+<div class="in-each-user" id="comment-<%= comment.id %>">
   <div class="avatar">
     <%= image_tag (comment.exist_avatar ? "no-image.png" : comment.avatar.url(:small)) %>
   </div>
@@ -13,10 +13,9 @@
       <span><%= time_ago_in_words comment.created_at %></span>
       <span>
         <% if user_signed_in? %>
-          <% if current_user.is_user?(comment.find_user_with_comment) %>
-            <input type="hidden" value="<%= comment.id %>" id="comment_id">
-              <%= link_to raw("<span class='text-danger'>Delete</span>"),
-                [comment.movie, comment], method: :delete, id: "link_delete" %>
+          <% if current_user.is_user? comment.find_user_with_comment %>
+            <%= link_to "Delete", [comment.movie, comment],
+            class: "text-danger link_delete", method: :delete, id: 'link_delete', 'data-comment-id': comment.id, data: {confirm: "abcd"} %>
           <% end %>
          <% end %>
       </span>

@@ -45,7 +45,7 @@ var movie = {
       })
       .fail(function(data, status){
         var res = jQuery.parseJSON(data.responseText);
-        alert(res.notice);
+        $('#require_login').text(res.notice);
       });
     } else {
       $.ajax({

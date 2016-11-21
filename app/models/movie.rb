@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  searchkick word: [:name, :actors]
+  searchkick
   paginates_per Settings.movie.per_page
   belongs_to :category
   belongs_to :country

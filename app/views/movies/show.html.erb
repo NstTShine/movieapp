@@ -1,6 +1,6 @@
 <div class="show-movie-page">
   <div>
-    <video width="100%", autoplay, controls>
+    <video width="100%", autoplay="true", controls>
       <source src="<%= @movie_support.movie.link %>" type="video/mp4">
     </video>
   </div>
@@ -13,17 +13,37 @@
      <div class="block-child">
         <div class="filminfo-fields">
           <ul>
-            <li><%= t ".movie_name" %><%= @movie_support.movie.name %></li>
+            <li>
+              <%= t ".movie_name" %><strong class="text-blue"><%= @movie_support.movie.name %></strong>
+            </li>
             <li><%= t ".type" %><%= @movie_support.movie.category_name %></li>
             <li><%= t ".country" %><%= @movie_support.movie.country_name %></li>
-            <li><%= t ".duration" %><%= @movie_support.movie.film_length %></li>
-            <li><%= t ".director" %><%= @movie_support.movie.director %></li>
-            <li><%= t ".actors" %><%= @movie_support.movie.actors %></li>
+            <li>
+              <%= t ".duration" %>
+              <span class="text-red">
+                <%= @movie_support.movie.film_length %><span></li>
+            <li>
+              <%= t ".director" %>
+              <span class="text-blue">
+                <%= @movie_support.movie.director %><span></li>
+            <li>
+              <%= t ".actors" %>
+              <span class="text-blue">
+                <% actors = @movie_support.movie.actors.split(',') %>
+                <% actors.each do |actor| %>
+                  <%= link_to actor, searchs_path(@movie, search: actor) %>
+                <% end %>
+              <span>
+            </li>
           </ul>
         </div>
         <div>
           <div class="rate-star">
-            <span id="rate-star"><%= @movie_support.movie.rating %></span>
+            <span id="rate-star">
+              <% unless @movie_support.movie.rating.nil? %>
+                <%= @movie_support.movie.rating.round(1) %>
+              <% end %>
+            </span>
           </div>
           <div class="rate-vote">
             <div class="your-vote"><%= t ".your_rate"%></div>
@@ -38,10 +58,15 @@
                 <%= image_tag(Settings.star_off, title: Settings.rating_rank[n],
                   alt: "#{n+1}", class: "star-movie") %>
               <% end %>
+              <span id="require_login"></span>
             </div>
             <div class="rate-people">
               <%= t ".rating" %>
-              <span id="rate_text"><%= @movie_support.movie_rating %></span>
+              <span id="rate_text">
+                <% unless @movie_support.movie_rating.nil? %>
+                  <%= @movie_support.movie_rating.round(1) %>
+                <% end %>
+              </span>
               <%= t ".from" %>
               <span id="total_rater"><%= @movie_support.total_rater %></span>
               <%= t ".member" %>
@@ -61,7 +86,7 @@
       <div class="block-child">
         <div class="title-head clearfix">
           <div class="fl-left">
-            <strong><%= @movie_support.total_comments %><% t ".comment" %></strong>
+            <strong><%= @movie_support.total_comments %><%= t ".comment" %></strong>
           </div>
           <div class="fl-right">
             <%= form_tag [@movie_support.movie ,@comment], method: :get do %>
@@ -81,9 +106,9 @@
           </div>
           <%= render "comments/form" %>
         </div>
-        <div class="comment-body">
+        <div class="comment-body" id="comment-body">
           <%= render @comments %>
-          <%= paginate @comments %>
+          <%= paginate @comments, theme: "twitter-bootstrap-3" %>
         </div>
       </div>
     </div>

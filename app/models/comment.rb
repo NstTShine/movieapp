@@ -19,4 +19,15 @@ class Comment < ApplicationRecord
   def find_user_with_comment
     @user = self.user
   end
+
+  scope :with_user, -> () {
+    self.select("users.name", "users.avatar").joins(:user).includes :user
+  }
+
+  class << self
+    def find_by_movie movie_id
+      self.with_user.where(movie_id: movie_id)
+        .order("comments.created_at DESC")
+    end
+  end
 end
