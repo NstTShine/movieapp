@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up do |user_params|
       user_params.permit :name, :email, :password,
-      :password_confirmation
+      :password_confirmation, :avatar
     end
     devise_parameter_sanitizer.permit :account_update do |user_params|
       user_params.permit :name, :email, :password,
-      :password_confirmation, :current_password
+      :password_confirmation, :current_password, :avatar
     end
   end
 
@@ -36,14 +36,14 @@ class ApplicationController < ActionController::Base
     else
       rating_movie =  movie.rating_movies.find_by user_id: current_user.try(:id)
       @movie_support = Supports::MovieSupport.new movie,
-        rating_movie, movie.rating_movies.length
+        rating_movie, movie.rating_movies.length, movie.comments.length
+      @comments = movie.comments.newest.page params[:page]
     end
   end
 
   def check_login_for_rate
     if current_user.nil?
-      respone[:notice] = t "rate_require_login"
-      render json: respone, status: 403
+      render json: {notice: t("rate_require_login")}, status: :forbidden
       return
     end
   end

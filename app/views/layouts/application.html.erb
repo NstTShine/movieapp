@@ -10,7 +10,11 @@
     <%= render "layouts/shim" %>
   </head>
   <body>
-    <%= render "layouts/header" %>
+    <% if user_signed_in? && (can? :manage, :all) %>
+      <%= render "layouts/admin_header" %>
+    <% else %>
+      <%= render "layouts/header" %>
+    <% end %>
     <div class="container fix-body">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-info"><%= message %></div>
