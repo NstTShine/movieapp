@@ -10,6 +10,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 50}
   enum role: [:admin, :member, :guest]
 
+  has_attached_file :avatar, styles: {small: "48x48#"}
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
   scope :latest, -> {order created_at: :desc}
 
   class << self

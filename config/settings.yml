@@ -8,6 +8,8 @@ movie:
   per_page: 20
 category:
   per_page: 20
+comment:
+  per_page: 5
 kinds:
   - ["Single Movie", "single_movie"]
   - ["Series Movie", "series_movie"]

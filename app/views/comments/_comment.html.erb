@@ -1,0 +1,25 @@
+<div class="in-each-user">
+  <div class="avatar">
+    <%= image_tag (comment.exist_avatar ? "no-image.png" : comment.avatar.url(:small)) %>
+  </div>
+  <div class="content-box">
+    <strong><span id="comment"><%= comment.name %></span></strong>
+    <div>
+      <span class="content-text">
+        <%= comment.content %>
+      </span>
+    </div>
+    <div class="time-bar">
+      <span><%= time_ago_in_words comment.created_at %></span>
+      <span>
+        <% if user_signed_in? %>
+          <% if current_user.is_user?(comment.find_user_with_comment) %>
+            <input type="hidden" value="<%= comment.id %>" id="comment_id">
+              <%= link_to raw("<span class='text-danger'>Delete</span>"),
+                [comment.movie, comment], method: :delete, id: "link_delete" %>
+          <% end %>
+         <% end %>
+      </span>
+    </div>
+  </div>
+</div>

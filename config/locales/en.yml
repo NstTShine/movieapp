@@ -101,10 +101,17 @@ en:
       rating: "Rate "
       from: " from "
       member: " member"
+      comment: " Comments"
+      order_by: "Order by: "
   users:
     show:
       name: "Name"
       email: "email"
+  comments:
+    form:
+      placeholder_text: "What do you think obout this firm..."
+      POST: "POST"
+      login_to_comment: "Login to comment"
   admin:
     categories:
       new:
@@ -197,6 +204,8 @@ en:
         description: "Description"
   js:
     url_update_rating: "/rating_movies"
+    url_create_comment: "/movies/"
+    can_not_save_comment: "Error! Can't save comment."
   time:
     formats:
       short_datetime: "%m/%d/%Y"

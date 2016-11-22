@@ -1,0 +1,21 @@
+<div class="write-box">
+  <div class="stylesheet">
+    <%= form_for [@movie_support.movie, @comment] do |f| %>
+      <%= f.hidden_field :movie_id, value: @movie_support.movie.id, id: "movie_id" %>
+      <%= f.text_area :content, class: "form_control", rows: 4,
+        placeholder: t(".placeholder_text"), required: true, id: "content_comment" %>
+  </div>
+  <div class="below-write-box">
+    <% if user_signed_in? %>
+      <button type="submit" class="btn btn-primary" id="btn_comment">
+        <%= t ".POST" %>
+      </button>
+    <% else %>
+      <span><%= t ".login_to_comment" %></span>
+      <button type="submit" class="btn btn-primary" id="btn_comment" disabled="disabled">
+        <%= t ".POST" %>
+      </button>
+    <% end %>
+    <% end %>
+  </div>
+</div>
