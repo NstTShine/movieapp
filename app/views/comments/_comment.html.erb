@@ -15,7 +15,8 @@
         <% if user_signed_in? %>
           <% if current_user.is_user? comment.find_user_with_comment %>
             <%= link_to "Delete", [comment.movie, comment],
-            class: "text-danger link_delete", method: :delete, id: 'link_delete', 'data-comment-id': comment.id, data: {confirm: "abcd"} %>
+              class: "text-danger link_delete", method: :delete,
+              id: "link_delete", 'data-comment-id': comment.id %>
           <% end %>
          <% end %>
       </span>

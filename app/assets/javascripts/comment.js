@@ -4,12 +4,11 @@ var comment = {
       event.preventDefault();
       comment.save_comment();
     });
-    $('.link_delete').each(function(){
-      $(this).click(function(event) {
-        event.preventDefault();
-        var comment_id = $(this).data('comment-id');
-        comment.delete_comment(comment_id);
-      });
+    $('body').on('click', 'a.link_delete', function(event) {
+      event.preventDefault();
+      var comment_id = $(this).data('comment-id');
+      comment.delete_comment(comment_id);
+      return false;
     });
 
     $('.pagination').each(function () {
@@ -20,6 +19,7 @@ var comment = {
       });
     });
   },
+
   save_comment: function() {
    var comment_params = {};
    comment_params.movie_id = $('#movie_id').val();
@@ -31,11 +31,7 @@ var comment = {
         alert(I18n.t('js.can_not_save_comment'))
       } else {
         $('.comment-body').prepend(data);
-        $('#link_delete').click(function(event) {
-          event.preventDefault();
-          var comment_id = $(this).data('comment-id');
-          comment.delete_comment(comment_id);
-        });
+        $('#total_comments').html(parseInt($('#total_comments').html()) + 1);
       }
       $('#content_comment').val('');
     }, 'html');
@@ -51,15 +47,17 @@ var comment = {
       success: function() {
         $('#comment-' + comment_id).fadeOut(500, function() {
           $(this).remove();
+          $('#total_comments').html(parseInt($('#total_comments').html()) - 1);
         });
       }
     });
   },
 
   load_comment_with_page: function (movie_id) {
+    var movie_id = movie_id;
     $.get($('.pagination').attr('href'),
-      {params: movie_id}, function (data, status) {
-      $('#comment-body').html(data);
+      {comment: movie_id}, function (data, status) {
+      $('.page-link').html(data);
       return false;
     }, 'html');
   }

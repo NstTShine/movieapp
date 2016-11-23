@@ -86,10 +86,13 @@
       <div class="block-child">
         <div class="title-head clearfix">
           <div class="fl-left">
-            <strong><%= @movie_support.total_comments %><%= t ".comment" %></strong>
+            <strong>
+              <span id="total_comments"><%= @movie_support.total_comments %></span>
+              <%= t ".comment" %>
+            </strong>
           </div>
           <div class="fl-right">
-            <%= form_tag [@movie_support.movie ,@comment], method: :get do %>
+            <%= form_tag [@movie_support.movie, @comment], method: :get do %>
               <%= t ".order_by" %>
               <%= select_tag :comment_order, options_for_select([["Newsest", "1"],
                 ["Oldest", "2"]],params[:comment_order]), class:"form-control" %>
