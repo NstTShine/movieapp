@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 50}
   enum role: [:admin, :member, :guest]
 
-  has_attached_file :avatar, styles: {small: "48x48#"}
+  has_attached_file :avatar, styles: {small: "48x48#", medium: "96x96#"}
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   scope :latest, -> {order created_at: :desc}
@@ -30,5 +30,9 @@ class User < ApplicationRecord
 
   def is_user? user
     self.id == user.id
+  end
+
+  def exist_avatar
+    self.avatar_file_name.nil?
   end
 end

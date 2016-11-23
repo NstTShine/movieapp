@@ -22,5 +22,5 @@
 $(document).on('turbolinks:load', function(){
   movie.initialize();
   comment.initialize();
-
+  profile.initialize();
 });
