@@ -1,48 +1,50 @@
 <% provide :title, t(".alluser") %>
-<h1 class="fix-h1"><%= t ".alluser" %></h1>
-<%= form_tag admin_users_path, method: :get do %>
-  <div class="form-group row mg-top">
-    <div class="col-xs-6">
-      <%= text_field_tag :search_user, params[:search_user], class: "form-control",
-        placeholder: t(".search_title") %>
+<div class="cover-form">
+  <h1 class="fix-h1"><%= t ".alluser" %></h1>
+  <%= form_tag admin_users_path, method: :get do %>
+    <div class="form-group row mg-top">
+      <div class="col-xs-6">
+        <%= text_field_tag :search_user, params[:search_user], class: "form-control",
+          placeholder: t(".search_title") %>
+      </div>
+      <div class="col-xs-2">
+        <%= submit_tag t(".btn_search"), class: "btn btn-default" %>
+      </div>
     </div>
-    <div class="col-xs-2">
-      <%= submit_tag t(".btn_search"), class: "btn btn-default" %>
-    </div>
-  </div>
-<% end %>
-<table class="table table-hover ls-users">
-  <thead class="title_table">
-    <tr>
-      <th class="text-c"><%= t ".index" %></th>
-      <th class="text-c"><%= t ".name" %></th>
-      <th class="text-c"><%= t ".email" %></th>
-      <th class="text-c"><%= t ".created_date" %></th>
-      <th class="text-c"><%= t ".role" %></th>
-      <th class="text-c"><%= t ".link_delete" %></th>
-    </tr>
-  </thead>
-  <tbody>
-      <% @users.each_with_index do |user, index| %>
-        <tr>
-          <td class="text-c">
-            <% params[:page] ||= "1" %>
-            <%= index_for params[:page], index, Settings.user.per_page %>
-          </td>
-          <td class="text-c"><%= link_to user.name, user %></td>
-          <td class="text-c"><%= link_to user.email, user %></td>
-          <td class="text-c"><%= user.created_at
-            .strftime(t "time.formats.short_datetime") %></td>
-          <td class="text-c"><%= user.role %>
-          <td class="text-c">
-            <% if can?(:manage, :all) && !current_user.is_user?(user) %>
-              <%= link_to raw("<span class='glyphicon glyphicon-trash
-                text-danger'></span>"), [:admin, user], method: :delete,
-                data: {confirm: t(".confirm_delete")} %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-  </tbody>
-</table>
-<%= paginate @users %>
+  <% end %>
+  <table class="table table-hover ls-users">
+    <thead class="title_table">
+      <tr>
+        <th class="text-c"><%= t ".index" %></th>
+        <th class="text-c"><%= t ".name" %></th>
+        <th class="text-c"><%= t ".email" %></th>
+        <th class="text-c"><%= t ".created_date" %></th>
+        <th class="text-c"><%= t ".role" %></th>
+        <th class="text-c"><%= t ".link_delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @users.each_with_index do |user, index| %>
+          <tr>
+            <td class="text-c">
+              <% params[:page] ||= "1" %>
+              <%= index_for params[:page], index, Settings.user.per_page %>
+            </td>
+            <td class="text-c"><%= link_to user.name, user %></td>
+            <td class="text-c"><%= link_to user.email, user %></td>
+            <td class="text-c"><%= user.created_at
+              .strftime(t "time.formats.short_datetime") %></td>
+            <td class="text-c"><%= user.role %>
+            <td class="text-c">
+              <% if can?(:manage, :all) && !current_user.is_user?(user) %>
+                <%= link_to raw("<span class='glyphicon glyphicon-trash
+                  text-danger'></span>"), [:admin, user], method: :delete,
+                  data: {confirm: t(".confirm_delete")} %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <%= paginate @users, theme: "twitter-bootstrap-3" %>
+</div>

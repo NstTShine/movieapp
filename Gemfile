@@ -21,6 +21,7 @@ gem "paperclip", "~> 5.1"
 gem "searchkick"
 gem "i18n-js", "~> 3.0.0.rc14"
 gem "cancancan", "~> 1.15"
+gem "social-share-button"
 
 group :development, :test do
   gem "byebug", platform: :mri

@@ -64,16 +64,20 @@ en:
       country: "Country"
       search: "Search"
       placeholder_text: "Enter movie or actor's name..."
-      manage: " Manage"
-      users: "Users"
-      movies: "Movies"
-      categories: "Categories"
-      countries: "Countries"
     footer:
       about: "About"
       contact: "Contact"
       help: "Help"
       copyright: "Copyright © Your Website 2016"
+    admin_header:
+      users: "Users"
+      movies: "Movies"
+      categories: "Categories"
+      countries: "Countries"
+      logout: "Logout"
+      profile: "Profile"
+      settings: "Settings"
+      movie_app: "Movie App"
   pages:
     home:
       title: "Home"
@@ -103,6 +107,8 @@ en:
       member: " member"
       comment: " Comments"
       order_by: "Order by: "
+      like: "LIKE"
+      report: "REPORT"
   users:
     show:
       name: "Name"
@@ -176,6 +182,7 @@ en:
         search_title: "Enter keyword"
         btn_search: "Search"
         index: "NO."
+        rate: "Rating"
         created_date: "Created"
         updated_date: "Updated"
         options: "Options"

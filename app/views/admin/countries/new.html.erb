@@ -1,8 +1,10 @@
 <% provide :title, t(".title") %>
 <% provide :button_text, t(".btn_create") %>
-<h1 class="fix-h1"><%= t ".title" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-4">
-    <%= render "form" %>
+    <div class="cover-form">
+      <h1 class="fix-h1"><%= t ".title" %></h1>
+      <%= render "form" %>
+    </div>
   </div>
 </div>

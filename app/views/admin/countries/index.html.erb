@@ -1,16 +1,18 @@
 <% provide :title, t(".title") %>
-<%= link_to t(".btn_add_new"), new_admin_country_path,
-  {class: "btn btn-primary mg-boot"} %>
-<% if @countries.any? %>
-  <table class="table table-hover">
-    <tr>
-      <th class="text-c"><%= t ".order" %></th>
-      <th class="text-c"><%= t ".country_name" %></th>
-      <th class="text-c"><%= t ".options" %></th>
-    </tr>
-    <%= render @countries %>
-  </table>
-  <div class="text-c">
-    <%= paginate @countries %>
-  </div>
-<% end %>
+<div class="cover-form">
+  <%= link_to t(".btn_add_new"), new_admin_country_path,
+    {class: "btn btn-primary mg-boot"} %>
+  <% if @countries.any? %>
+    <table class="table table-hover">
+      <tr>
+        <th class="text-c"><%= t ".order" %></th>
+        <th class="text-c"><%= t ".country_name" %></th>
+        <th class="text-c"><%= t ".options" %></th>
+      </tr>
+      <%= render @countries %>
+    </table>
+    <div class="text-c">
+      <%= paginate @countries %>
+    </div>
+  <% end %>
+</div>

@@ -190,6 +190,9 @@ GEM
       activemodel
       elasticsearch (>= 1)
       hashie
+    social-share-button (0.8.4)
+      coffee-rails
+      sass-rails
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -247,6 +250,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)
   searchkick
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

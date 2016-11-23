@@ -1,11 +1,22 @@
 <div class="show-movie-page">
   <div>
-    <video width="100%", autoplay="true", controls>
+    <video width="100%", controls>
       <source src="<%= @movie_support.movie.link %>" type="video/mp4">
     </video>
   </div>
   <div class="share-like-bar">
-    <%= t ".tempolary_content" %>
+    <div class="btn-actions fl-left">
+      <%= link_to t(".like"), "#", class: "glyphicon glyphicon-thumbs-up" %>
+    </div>
+    <div class="btn-actions fl-left">
+      <%= link_to t(".report"), "#", class: "glyphicon glyphicon-flash" %>
+    </div>
+    <div class="fl-right social-share-button ssb-icon">
+      <div>
+        <%= social_share_button_tag(@movie_support.movie.name,
+          url: "http://google.com") %>
+      </div>
+    </div>
   </div>
   <div class="tn-main-l">
     <div class="block-movie">
@@ -93,10 +104,12 @@
           </div>
           <div class="fl-right">
             <%= form_tag [@movie_support.movie, @comment], method: :get do %>
-              <%= t ".order_by" %>
               <%= select_tag :comment_order, options_for_select([["Newsest", "1"],
                 ["Oldest", "2"]],params[:comment_order]), class:"form-control" %>
             <% end %>
+          </div>
+          <div class="fl-right">
+            <%= t ".order_by" %>
           </div>
         </div>
         <div class="comment-bar">

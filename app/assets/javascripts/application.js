@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require i18n
 //= require i18n/translations
+//= require social-share-button
 //= require_tree .
 
 

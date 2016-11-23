@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "social-share-button";
 
 /* mixins, variables, etc. */
 
@@ -72,6 +73,9 @@ p {
 
 
 /* header */
+.color-head {
+  background-color: #2a3e50;
+}
 
 #logo {
   float: left;
@@ -285,6 +289,27 @@ a, a:focus, a:hover {
   width: 100%px;
 }
 
+.btn-actions {
+  margin-left: 3px;
+  color: #848282;
+  padding: 11px 20px;
+  background-color: #fff;
+  &:hover {
+    background-color: #F44336;
+  }
+}
+
+.social-share-button .ssb-icon {
+    background-size: 35px 35px!important;
+    height: 35px!important;
+    width: 35px!important;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+
+
+
+
 .tn-main-l {
   border-radius: 5px;
   float: left;
@@ -372,6 +397,7 @@ a, a:focus, a:hover {
 .fix-h1 {
   font-size: 30px;
   color: #0fc720;
+  margin-bottom: 10px;
 }
 .mg-boot {
   margin-bottom: 20px;
@@ -401,6 +427,16 @@ a, a:focus, a:hover {
   td {
     text-align: left;
   }
+  .title {
+    font-weight: bold;
+    font-family: initial;
+  }
+}
+/* for admin create a movie form */
+.cover-form {
+  background-color: rgb(224, 224, 224);
+  border-radius: 7px;
+  padding: 20px;
 }
 
 .tn-main-r {
