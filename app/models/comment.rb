@@ -27,7 +27,7 @@ class Comment < ApplicationRecord
   class << self
     def find_by_movie movie_id
       self.with_user.where(movie_id: movie_id)
-        .order("comments.created_at DESC")
+        .order(created_at: :desc)
     end
   end
 end

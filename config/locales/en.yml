@@ -107,7 +107,8 @@ en:
       member: " member"
       comment: " Comments"
       order_by: "Order by: "
-      like: "LIKE"
+      like: "Like"
+      unlike: "Unlike"
       report: "REPORT"
   users:
     show:

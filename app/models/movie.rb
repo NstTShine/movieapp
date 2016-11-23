@@ -3,9 +3,9 @@ class Movie < ApplicationRecord
   paginates_per Settings.movie.per_page
   belongs_to :category
   belongs_to :country
-  has_many :comments
-  has_many :likes
-  has_many :rating_movies
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :rating_movies, dependent: :destroy
   enum kind: [:single_movie, :series_movie]
 
   validates :name, presence: true, uniqueness:true, length: {maximum: 50}
