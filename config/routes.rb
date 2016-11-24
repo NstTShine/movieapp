@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get "/pages/*page" => "pages#show"
 
   devise_for :users, controllers: {omniauth_callbacks: "callbacks"}
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get :liking
+    end
+  end
   resources :movies do
     resources :comments
   end
@@ -17,5 +21,6 @@ Rails.application.routes.draw do
     resources :countries
     resources :users
     resources :movies
+    resources :likes, only: [:create, :destroy]
   end
 end

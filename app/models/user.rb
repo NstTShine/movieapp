@@ -5,7 +5,12 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :active_likes, class_name: Like.name,
+    foreign_key: :user_id, dependent: :destroy
+
   searchkick
+
+  has_many :liking, through: :active_likes, source: :movie_id
 
   validates :name, presence: true, length: {maximum: 50}
   enum role: [:admin, :member, :guest]
@@ -34,5 +39,17 @@ class User < ApplicationRecord
 
   def exist_avatar
     self.avatar_file_name.nil?
+  end
+
+  def like movie
+    active_like.create movie: movie.id
+  end
+
+  def unlike id
+    passive_like.find_by(movie_id: id).destroy
+  end
+
+  def liking? movie
+    liking.include? movie
   end
 end

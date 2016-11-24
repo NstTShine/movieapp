@@ -1,0 +1,5 @@
+<%= form_for(current_user.active_likes.find_by(movie_id: @movie_support.movie.id), html: {method: :delete}, remote: true) do |f| %>
+  <div class="btn-actions fl-left">
+    <%= f.submit "Unfollow", class: "glyphicon glyphicon-thumbs-down" %>
+  </div>
+<% end %

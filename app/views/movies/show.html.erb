@@ -5,12 +5,7 @@
     </video>
   </div>
   <div class="share-like-bar">
-    <div class="btn-actions fl-left">
-      <%= link_to t(".like"), "#", class: "glyphicon glyphicon-thumbs-up", id: "like" %>
-    </div>
-    <div class="btn-actions fl-left">
-      <%= link_to t(".unlike"), "#", class: "glyphicon glyphicon-thumbs-down", id: "unlike" %>
-    </div>
+    <%= render "follow_form" if user_signed_in? %>
     <div class="btn-actions fl-left">
       <%= link_to t(".report"), "#", class: "glyphicon glyphicon-flash" %>
     </div>
