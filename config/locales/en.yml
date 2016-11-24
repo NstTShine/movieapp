@@ -116,7 +116,7 @@ en:
       email: "email"
   comments:
     form:
-      placeholder_text: "What do you think about this firm..."
+      placeholder_text: "What do you think about this film..."
       POST: "POST"
       login_to_comment: "Login to comment"
   admin:

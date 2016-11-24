@@ -552,6 +552,92 @@ a, a:focus, a:hover {
   }
 }
 
+/* for show profile user */
+#account-picker {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  margin-top: 1px;
+  border-radius: 20px;
+}
+#account-picker-ava {
+  height: 48px;
+  width: 48px;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 20px;
+}
+#account-profile {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  display: none;
+  height: 175px;
+  width: 270px;
+  border: 1px solid #c5c5c5;
+  box-shadow: 0 0 15px rgba(0,0,0,.18);
+  background-color: #fff;
+  z-index: 9998;
+  cursor: default;
+}
+.card-border-arrow, .card-border-arrow-backside {
+  position: absolute;
+  right: 10px;
+  display: none;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 12px solid transparent;
+  border-top-width: 0;
+  border-top-color: transparent;
+  border-bottom-width: 12px;
+}
+.card-border-arrow {
+  top: 50px;
+  border-bottom-color: #fff;
+  z-index: 9999;
+}
+.card-border-arrow-backside {
+  top: 49px;
+  border-bottom-color: #c5c5c5;
+  z-index: 9997;
+}
+.profile-email {
+  margin: 10px;
+  font-size: 12px;
+  font-style: italic;
+}
+.profile-ava-name {
+  margin: 10px;
+  .name {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+}
+.profile-setting {
+  background-color: #e8f5f7;
+  height: 33px;
+  .settings {
+    margin-top: 6px;
+    margin-left: 20px
+  }
+  .logout {
+    margin-top: 6px;
+    margin-right: 20px
+  }
+  .btn-link-fix {
+    padding: 0px 12px!important;
+  }
+}
+.support-div {
+  clear: both;
+}
+.ava-style {
+  border-radius: 50%;
+}
 
 
 
